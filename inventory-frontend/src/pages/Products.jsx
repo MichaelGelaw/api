@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import API from "../services/api";
-import Navbar from "../Components/Navbar";
+import Navbar from "../components/Navbar";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
