@@ -1,0 +1,69 @@
+# =========================
+# Laravel inventory-api ignores
+# =========================
+/inventory-api/vendor/
+/inventory-api/node_modules/
+inventory-api/public/storage
+inventory-api/storage/*.key
+/inventory-api/.env
+/inventory-api/.env.local
+/inventory-api/.env.*.php
+/inventory-api/.phpunit.result.cache
+/inventory-api/storage/framework/cache/*
+inventory-api/storage/framework/sessions/*
+inventory-api/storage/framework/views/*
+inventory-api/storage/logs/*
+/inventory-api/homestead.yaml
+/inventory-api/Homestead.yaml
+/inventory-api/npm-debug.log
+/inventory-api/yarn-error.log
+
+# =========================
+# React inventory-frontend ignores
+# =========================
+/inventory-frontend/node_modules/
+/inventory-frontend/build/
+/inventory-frontend/dist/
+/inventory-frontend/.env
+/inventory-frontend/.env.local
+/inventory-frontend/.env.development.local
+/inventory-frontend/.env.test.local
+/inventory-frontend/.env.production.local
+/inventory-frontend/npm-debug.log*
+/inventory-frontend/yarn-debug.log*
+/inventory-frontend/yarn-error.log*
+
+# =========================
+# OS / Editor / Misc ignores
+# =========================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
