@@ -12,7 +12,7 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const token = localStorage.getItem('token');
+        // const token = localStorage.getItem('token');
         const res = await API.get(`/products/${id}`);
 
         setName(res.data.name);
@@ -28,10 +28,9 @@ const EditProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const token = localStorage.getItem('token');
-      await API.put(`/products/${id}`,
-        { name, quantity, price },
-      );
+      await axios.get('http://your-laravel-app.test/sanctum/csrf-cookie');
+      await axios.put(`/products/${id}`, { name, quantity, price });
+
       navigate('/products');
     } catch (err) {
       console.error(err);

@@ -11,6 +11,7 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      await axios.get('http://your-laravel-app.test/sanctum/csrf-cookie');
       await API.post('/products',
         { name, quantity, price }
       );
