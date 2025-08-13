@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import API from "../services/api";
 import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
@@ -12,9 +12,8 @@ const AddProduct = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:8000/api/products',
-        { name, quantity, price },
-        { headers: { Authorization: `Bearer ${token}` } }
+      await API.post('/products',
+        { name, quantity, price }
       );
       navigate('/products');
     } catch (err) {

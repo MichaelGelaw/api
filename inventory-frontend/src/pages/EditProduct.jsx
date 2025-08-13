@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import API from "../services/api";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -13,9 +13,8 @@ const EditProduct = () => {
     const fetchProduct = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get(`http://localhost:8000/api/products/${id}`, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        const res = await API.get(`/products/${id}`);
+
         setName(res.data.name);
         setQuantity(res.data.quantity);
         setPrice(res.data.price);
@@ -30,9 +29,8 @@ const EditProduct = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:8000/api/products/${id}`,
+      await API.PUT(`/products/${id}`,
         { name, quantity, price },
-        { headers: { Authorization: `Bearer ${token}` } }
       );
       navigate('/products');
     } catch (err) {
