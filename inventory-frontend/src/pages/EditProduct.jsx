@@ -28,7 +28,7 @@ const EditProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.get('http://your-laravel-app.test/sanctum/csrf-cookie');
+      await API.get('https://inventory-api-laravel.up.railway.app/sanctum/csrf-cookie');
       await API.put(`/products/${id}`, { name, quantity, price });
 
       navigate('/products');
