@@ -28,8 +28,8 @@ const EditProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.get('http://your-laravel-app.test/sanctum/csrf-cookie');
-      await axios.put(`/products/${id}`, { name, quantity, price });
+      await API.get('http://your-laravel-app.test/sanctum/csrf-cookie');
+      await API.put(`/products/${id}`, { name, quantity, price });
 
       navigate('/products');
     } catch (err) {
