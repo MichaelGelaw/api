@@ -28,8 +28,8 @@ const EditProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
-      await API.PUT(`/products/${id}`,
+      // const token = localStorage.getItem('token');
+      await API.put(`/products/${id}`,
         { name, quantity, price },
       );
       navigate('/products');

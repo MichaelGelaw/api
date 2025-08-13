@@ -11,7 +11,6 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
       await API.post('/products',
         { name, quantity, price }
       );
